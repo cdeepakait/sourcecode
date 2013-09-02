@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import tutorial.service.TestService;
 
@@ -20,10 +19,10 @@ public class HomeController {
 	private TestService ts;
 
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	@ResponseBody
+	//@ResponseBody
 	public String msg() {
 		System.out.println("Inside controller message");
 		ts.printMessage();
-		return "hello";
+		return "home"; // Redirects to home.jsp
 	}
 }
